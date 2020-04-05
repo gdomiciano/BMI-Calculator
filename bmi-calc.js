@@ -1,11 +1,11 @@
 let weight = 55;
 let height = 1.67;
-const BMI = weight / (height * height);
 
+const calculateBmi = function(w, h) { return w / (h**2) };
 
-function getBmiResult(bmiResult){
+function getBmiResult(bmiResult) {
     let result; 
-    
+
     if (bmiResult < 18.5) {
         result = `Your BMI is ${bmiResult}, this means that you are underweight`;
     } else if (bmiResult > 18.5 && bmiResult < 25) {
@@ -20,3 +20,4 @@ function getBmiResult(bmiResult){
 
     return result;
 }
+ 
