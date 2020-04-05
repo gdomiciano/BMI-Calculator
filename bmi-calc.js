@@ -23,3 +23,8 @@ function getBmiClass (bmiResult) {
 
 const result = calculateBmi(weight, height);
 getBmiClass(result);
+
+(function() {
+    const result2 = 'new bmi ' + 100 / (1.95**2)
+    console.log(result2)
+})();
