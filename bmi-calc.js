@@ -1,9 +1,9 @@
 let weight = 55;
 let height = 1.67;
 
-const calculateBmi = function(w, h) { return w / (h**2) };
+const calculateBmi = function (w, h) { return w / (h**2) };
 
-function getBmiResult(bmiResult) {
+function getBmiClass (bmiResult) {
     let result; 
 
     if (bmiResult < 18.5) {
@@ -18,6 +18,8 @@ function getBmiResult(bmiResult) {
         result = 'Sorry, something went wrong. Try again later.'; 
     }
 
-    return result;
+    console.log(result);
 }
- 
+
+const result = calculateBmi(weight, height);
+getBmiClass(result);
