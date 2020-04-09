@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            grid-gap: 30px;
+            justify-items: center;
+            width: 600px;
+            margin: 50px auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bmi-form {
+            background: #444;
+            color: white;
+            width: fit-content;
+            padding: 40px;
+            display: grid;
+            grid-gap: 15px;
+        }
+
+        .bmi-fieldset {
+            border-color: #999;
+            display: contents;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calcuator</h1>
+    <p>
+        <strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.
+    </p>
+
+    <form class="bmi-form">
+        <fieldset class="bmi-fieldset">
+            <legend>Your information:</legend>
+            <div class="field-group">
+                <label for="height">Height (m):</label>
+                <input type="number" name="height" id="height" class="field field-height">
+            </div>
+            
+            <div class="field-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" name="weight" id="weight" class="field field-weight">
+            </div> 
+        </fieldset>
+        <button class="submit">Get BMI result</button>
+    </form>
+
+    <p class="result"></p>
+    <script src="bmi-calc.js"></script>
+</body>
+</html>
