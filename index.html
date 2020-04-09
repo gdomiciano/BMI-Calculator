@@ -42,20 +42,20 @@
         <strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.
     </p>
 
-    <form class="bmi-form">
+    <form class="bmi-form" action="javascript:getBmiResult()">
         <fieldset class="bmi-fieldset">
             <legend>Your information:</legend>
             <div class="field-group">
                 <label for="height">Height (m):</label>
-                <input type="number" name="height" id="height" class="field field-height">
+                <input type="number" step="0.01" name="height" id="height" class="field field-height">
             </div>
             
             <div class="field-group">
                 <label for="weight">Weight (kg)</label>
-                <input type="number" name="weight" id="weight" class="field field-weight">
+                <input type="number" step="000.1" name="weight" id="weight" class="field field-weight">
             </div> 
         </fieldset>
-        <button class="submit">Get BMI result</button>
+        <button class="submit" type="submit">Get BMI result</button>
     </form>
 
     <p class="result"></p>
