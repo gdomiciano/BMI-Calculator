@@ -1,13 +1,12 @@
-let weight = parseFloat(prompt("Insert your weight (kg):"));
-let height = parseFloat(prompt("Insert your height (m):"));
+const calculateBmi = function () { 
+    let weight = document.getElementById('weight').value;
+    let height = document.getElementsByClassName('field-height')[0].value;
+    
+    return weight / (height**2) 
+};
 
-if (typeof weight != Number || typeof height != Number) {
-    console.log("Invalid input!");
-}
-  
-const calculateBmi = function (w, h) { return w / (h**2) };
-
-function getBmiClass (bmiResult) {
+function getBmiClass () {
+    const bmiResult = calculateBmi();
     let result; 
 
     if (bmiResult < 18.5) {
@@ -24,11 +23,3 @@ function getBmiClass (bmiResult) {
 
     console.log(result);
 }
-
-const result = calculateBmi(weight, height);
-getBmiClass(result);
-
-(function() {
-    const result2 = 'new bmi ' + 100 / (1.95**2)
-    console.log(result2)
-})();
