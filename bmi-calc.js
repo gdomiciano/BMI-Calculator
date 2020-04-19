@@ -44,19 +44,34 @@ const bmiCalculator = {
 }
 
 // DRY principle = Don't Repreat Yourself Principle
-console.log(bmiCalculator)
+// console.log(bmiCalculator)
 for (const element in bmiCalculator.elementsObj) {
-    obj = bmiCalculator.elementsObj
+    obj = bmiCalculator.elementsObj;
+
     if (obj.hasOwnProperty(element)) {
         
-        const $htmlEl = dcument.querySelector(`.${element}`);
-        const value = obj[element]
+        const $htmlEl = document.querySelector(`.${element}`);
+        const value = obj[element];
 
         if(value.includes('</')) {
             $htmlEl.insertAdjacentHTML('afterbegin', value);
         } else {
-            $htmlEl.textContent = value
+            $htmlEl.textContent = value;
         }
     }
 }
 
+document.querySelector('.bmi-form').addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    console.log(evt);
+    bmiCalculator.getBmiResult();
+});
+
+
+// add event to validade on blur for each field
+const fields = document.querySelectorAll('.field');
+fields.forEach($field => {
+    $field.addEventListener('blur', (evt) => {
+        console.log(evt.target.className, ': needs validation on blur');
+    });
+});
