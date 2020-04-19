@@ -72,6 +72,15 @@ document.querySelector('.bmi-form').addEventListener('submit', (evt) => {
 const fields = document.querySelectorAll('.field');
 fields.forEach($field => {
     $field.addEventListener('blur', (evt) => {
+        if (evt.target.validity.valueMissing) {
+            evt.target.setCustomValidity(`Please insert your ${evt.target.id}`);
+        } else if (evt.target.validity.stepMismatch) {
+            evt.target.setCustomValidity(`Please insert a valid ${evt.target.id}`);
+        } else {
+            evt.target.setCustomValidity('');
+        }
+        console.log(evt)
         console.log(evt.target.className, ': needs validation on blur');
+        evt.target.checkValidity();
     });
 });

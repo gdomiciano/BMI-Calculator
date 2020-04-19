@@ -34,6 +34,9 @@
             display: contents;
             padding: 20px;
         }
+        .field:valid {
+            border-color: greenyellow;
+        }
     </style>
 </head>
 <body>
@@ -46,12 +49,12 @@
             <legend>Your information:</legend>
             <div class="field-group">
                 <label for="height">Height (m):</label>
-                <input type="number" step="0.01" name="height" id="height" class="field field-height">
+                <input type="number" step="0.01" name="height" id="height" class="field field-height" required autofocus>
             </div>
             
             <div class="field-group">
                 <label for="weight">Weight (kg)</label>
-                <input type="number" step="000.1" name="weight" id="weight" class="field field-weight">
+                <input type="number" step="000.1" name="weight" id="weight" class="field field-weight" required>
             </div> 
         </fieldset>
         <button class="submit" type="submit">Get BMI result</button>
