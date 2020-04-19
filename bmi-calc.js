@@ -42,7 +42,7 @@ const bmiCalculator = {
         p.style.color = color;
     },
 
-    saveResult () {
+    saveResult() {
         if (!localStorage) return;
         const currentHistory = JSON.parse(localStorage.getItem('bmi-history'));
         const newData = {
@@ -51,8 +51,19 @@ const bmiCalculator = {
             weight: document.querySelector('.field-weight').value,
             result: document.querySelector('.result').textContent
         };
-        currentHistory.push(newData)
+        currentHistory.push(newData);
         localStorage.setItem('bmi-history', JSON.stringify(currentHistory));
+    },
+
+    loadHistory() {
+        if (localStorage && !localStorage.getItem('bmi-history')) localStorage.setItem('bmi-history', JSON.stringify([]));
+        const historyList = JSON.parse(localStorage.getItem('bmi-history'));
+        $history = document.querySelector('.history');
+        historyList.forEach((item) => {
+            const formattedDate = new Date(item.date).toDateString();
+            const template = `<li><strong>${formattedDate}:</strong> based on height ${item.height}m and weight ${item.weight}kg ${item.result}</li>`;
+            $history.insertAdjacentHTML('afterbegin', template);
+        })
     }
 }
 
@@ -74,8 +85,7 @@ for (const element in bmiCalculator.elementsObj) {
     }
 }
 
-// create history for bmi later on
-if (localStorage && !localStorage.getItem('bmi-history')) localStorage.setItem('bmi-history', JSON.stringify([]))
+bmiCalculator.loadHistory()
 
 document.querySelector('.bmi-form').addEventListener('submit', (evt) => {
     evt.preventDefault();
