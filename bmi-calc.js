@@ -4,8 +4,7 @@ const bmiCalculator = {
         // create a title property and assign a string as a value
         title: 'BMI Calcuator',
         // create a intro property and assign a string containing raw HTML as a value
-        intro: '<strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.',
-        'long-desc': '<strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.<strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.<strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.<strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres. '
+        intro: '<strong>Body mass index (BMI)</strong> is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m<sup>2</sup>, resulting from mass in kilograms and height in metres.'
     },
 
     //add methods
@@ -44,13 +43,13 @@ const bmiCalculator = {
     }
 }
 
-// DRY - don't repreat yourself
+// DRY principle = Don't Repreat Yourself Principle
 console.log(bmiCalculator)
 for (const element in bmiCalculator.elementsObj) {
     obj = bmiCalculator.elementsObj
     if (obj.hasOwnProperty(element)) {
         
-        const $htmlEl = document.querySelector(`.${element}`);
+        const $htmlEl = dcument.querySelector(`.${element}`);
         const value = obj[element]
 
         if(value.includes('</')) {
@@ -60,22 +59,4 @@ for (const element in bmiCalculator.elementsObj) {
         }
     }
 }
-
-
-// -------- can be removed from below, it is here fore reference ----------- //
-// // get the h1 element based on the classname from the DOM and assign it to a $title constant
-// const $title = document.querySelector('.title')
-
-// // assign the value from the title property from the bmiCalcuator object to the text xcontent og the h1's element
-// $title.textContent = bmiCalculator.title
-
-
-// // get the p element based on the classname from the DOM and assign it to a $intro constant
-// const $intro = document.querySelector('.intro')
-
-// //add the value from the intro property to the $intro element using the insertAdjacentHTML method available to any html element inside the DOM 
-// // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
-// $intro.insertAdjacentHTML('afterbegin', bmiCalculator.intro);
-
-
 
