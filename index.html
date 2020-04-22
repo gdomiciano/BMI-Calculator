@@ -34,6 +34,14 @@
             display: contents;
             padding: 20px;
         }
+
+        .field:valid {
+            border: 2px solid greenyellow;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -41,25 +49,31 @@
     <p class="intro"> 
     </p>
 
-    <p class="long-desc"></p>
-
-    <form class="bmi-form" action="javascript:bmiCalculator.getBmiResult()">
+    <form class="bmi-form">
         <fieldset class="bmi-fieldset">
             <legend>Your information:</legend>
             <div class="field-group">
                 <label for="height">Height (m):</label>
-                <input type="number" step="0.01" name="height" id="height" class="field field-height">
+                <input type="number" step="0.01" name="height" id="height" class="field field-height" required autofocus> 
             </div>
             
             <div class="field-group">
                 <label for="weight">Weight (kg)</label>
-                <input type="number" step="000.1" name="weight" id="weight" class="field field-weight">
+                <input type="number" step="000.1" name="weight" id="weight" class="field field-weight" required>
             </div> 
         </fieldset>
         <button class="submit" type="submit">Get BMI result</button>
     </form>
 
     <p class="result"></p>
+
+    <hr style="width: 100%; border: 1px solid grey">
+
+    <section class="history-container">
+        <h2>BMI History</h2>
+        <ul class="history">
+        </ul>
+    </section>
     <script src="bmi-calc.js"></script>
 </body>
 </html>
